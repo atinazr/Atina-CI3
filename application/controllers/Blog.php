@@ -111,7 +111,7 @@ class Blog extends CI_Controller {
         $data['error'] = $this->upload->display_errors();  
         $this->load->view('blog_update_view', $data);  
       }
-      
+
       else {  
         $dataUpload = $this->upload->data();  
         $data = array(  
@@ -127,5 +127,9 @@ class Blog extends CI_Controller {
         redirect('Blog');  
       } 
     }   
+  }
+  public function delete_action($id){
+    $this->Blog_model->delete($id);
+    redirect('Blog');
   }
 }
