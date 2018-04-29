@@ -7,7 +7,7 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-light bg-light mb-4">
-	      <a class="navbar-brand" href="#">ATINA ZA'</a>
+      <a class="navbar-brand" href="#">ATINA ZA'</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -19,26 +19,32 @@
           <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url("index.php/Category")?>">Category</a>
           </li>
-        	 <li class="nav-item">
+        <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url("index.php/Blog")?>">Blog</a></li>
         </ul>
       </div>
     </nav>
    <main role="main" class="container">
-    <?php echo form_open( 'category/create', array('class' => 'needs-validation', 'novalidate' => '') ); ?>
-
-<div class="form-group">
-   <label for="cat_name">Nama Kategori</label>
-   <input type="text" class="form-control" name="cat_name" value="<?php echo set_value('cat_name') ?>" required>
-   <div class="invalid-feedback">Isi judul dulu gan</div>
-</div>
-
-<div class="form-group">
-   <label for="text">Deskripsi</label>
-   <input type="text" class="form-control" name="cat_description" value="<?php echo set_value('cat_description') ?>" required>
-   <div class="invalid-feedback">Isi deskripsinya dulu gan</div>
-</div>
-<button id="submitBtn" type="submit" class="btn btn-primary">Simpan</button>
+	<a href="<?php echo base_url('index.php/category/create') ?>" class="btn btn-primary mb-3">Tambah</a>
+   <table class="table table-bordered">
+       <thead>
+         <th>#</th>
+         <th>Name</th>
+         <th>Description</th>
+         <th>Action</th>
+       </thead>
+       <tbody>
+         <?php foreach ($cat_read as $key => $value): ?>
+           <tr>
+             <td><?php echo $key+1 ?></td>
+             <td><?php echo $value['cat_name'] ?></td>
+             <td><?php echo $value['cat_description'] ?></td>
+             <td><a href="<?php echo base_url('index.php/category/update/'.$value['cat_id']) ?>" class="btn btn-sm btn-success">Ubah</a>
+               <a href="<?php echo base_url('index.php/category/delete/'.$value['cat_id']) ?>" class="btn btn-sm btn-danger">Hapus</a></td>
+           </tr>
+         <?php endforeach ?>
+       </tbody>
+     </table>
     </main>											
 </body>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
