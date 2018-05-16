@@ -27,8 +27,8 @@
 				<li class="nav-item">
 					           <a class="nav-link" href="<?php echo base_url("index.php/Blog/datatable")?>">Blog Data Table</a>
 				          </li> 
-				        	 <li class="nav-item">
-					            <a class="nav-link" href="<?php echo base_url("index.php/Blog")?>">Blog</a>
+				<li class="nav-item">
+					            <a class="nav-link" href="<?php echo base_url("index.php/User/register")?>">Register</a>
 				</li>
 			        </ul>
 		      </div>
