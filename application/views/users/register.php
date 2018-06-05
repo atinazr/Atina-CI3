@@ -22,11 +22,11 @@
 
    <div class="form-group">
        <label>Password</label>
-       <input type="text" class="form-control" name="password" placeholder="Password" value="<?php echo set_value('password') ?>">
+       <input type="password" class="form-control" name="password" placeholder="Password" value="<?php echo set_value('password') ?>">
    </div>
    <div class="form-group">
        <label>Konfirmasi Password</label>
-       <input type="text" class="form-control" name="password2" placeholder="Konfirmasi Password" value="<?php echo set_value('password') ?>">
+       <input type="password" class="form-control" name="password2" placeholder="Konfirmasi Password" value="<?php echo set_value('password') ?>">
    </div>
    <button type="submit" class="btn btn-primary btn-block">Daftar</button>
    </main>
