@@ -33,6 +33,30 @@ class User_model extends CI_Model {
        }
    }
 
+   public function getUser()
+   {
+     $this->db->where('level','0');
+     return $this->db->get('users');
+   }
+
+   public function delete($id)
+   {
+     $this->db->where('user_id', $id);
+     return $this->db->delete('users');
+   }
+
+   public function getUserById($id)
+   {
+     $this->db->where('user_id', $id);
+     return $this->db->get('users'); 
+   }
+
+   public function update($id,$object)
+   {
+     $this->db->where('user_id', $id);
+     $this->db->update('users', $object);
+   }
+
 
 }
 
